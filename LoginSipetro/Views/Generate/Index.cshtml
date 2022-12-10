@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["title"] = "Generate Data";
+}
+<h2 class="mt-5">Generate Data</h2>
+<hr />
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">From</span>
+            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Until</span>
+            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+</div>
+<button class="btn btn-sm btn-warning text-white fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">Generate</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                Message
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">Generate Success</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal"><i class="fa-regular fa-circle-xmark"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

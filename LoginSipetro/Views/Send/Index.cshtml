@@ -1,0 +1,57 @@
+﻿@model LoginSipetro.Models.EmailData
+
+@{
+    ViewData["title"] = "Send Data";
+}
+<h2 class="mt-5">Send Data</h2>
+<hr />
+@ViewBag.msg
+
+<form asp-action="SendEmail" method="post" enctype="multipart/form-data">
+    <div class="col-12 mb-3">
+        <label asp-for="To" class="text-success">Please enter your email address</label>
+        <input asp-for="To" class="form-control" required/>
+        <span asp-validation-for="To" class="text-danger"></span>
+    </div>
+    <div class="col-12 mb-3">
+        <label asp-for="Cc" class="text-success">Please enter your Cc email</label>
+        <input asp-for="Cc" class="form-control" required/>
+        <span asp-validation-for="Cc" class="text-danger"></span>
+    </div>
+    <div class="col-12 mb-3">
+        <label asp-for="Subject" class="text-success">Subject</label>
+        <input asp-for="Subject" class="form-control" required/>
+        <span asp-validation-for="Subject" class="text-danger"></span>
+    </div>
+   @* <div class="col-12 mb-3">
+        <label asp-for="Body" class="text-success">Write your message</label>
+        <textarea asp-for="Body" class="form-control" id="editor" rows="3"></textarea>
+        <span asp-validation-for="Body" class="text-danger"></span>
+    </div>*@
+    <div class="col-12 mb-3">
+        <label asp-for="File" class="text-success">File</label>
+        <input asp-for="File" type="file" name="file" class="form-control" >
+        <span asp-validation-for="File" class="text-danger"></span>
+    </div>
+    
+    <div class="col-4">
+        <button type="submit" class="btn btn-outline-success">Send Email</button>
+    </div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                Message
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">Send Success</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal"><i class="fa-regular fa-circle-xmark"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
